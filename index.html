@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Contador</h1>
+    </header>
+
+    <section>
+        <div class="dados">
+            <label for="txtn">Número de (1 a 100)</label>
+            <input type="number" name="txtn" id="txtn">
+            <button type="button" onclick="adicionar()">Enviar</button>
+            <select name="flista" id="flista" size="6"></select>
+            <button type="button" onclick="finalizar()">Finalizar</button><br><br>
+        </div>
+
+        <div id="res" class="res"></div>
+    </section>
+
+    <footer><p>&copy; Vinicius JS</p></footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

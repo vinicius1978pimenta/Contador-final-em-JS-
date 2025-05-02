@@ -1,0 +1,170 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    min-height: 100vh; /* <-- Alterado aqui */
+    overflow-x: hidden;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* <-- Para o conteúdo ir de cima para baixo */
+    position: relative;
+    color: #fff;
+}
+
+/* Fundo animado com partículas simuladas */
+body::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(white 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: moveBG 30s linear infinite;
+    opacity: 0.06;
+    z-index: 0;
+}
+
+@keyframes moveBG {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 50px); }
+}
+
+/* Header estiloso */
+header {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #00f7ff;
+    text-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;
+}
+
+/* Área principal */
+section {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 0 25px #000000a2;
+    width: 90%;
+    max-width: 450px;
+    z-index: 2;
+    backdrop-filter: blur(10px);
+    position: relative;
+}
+
+/* Labels e inputs */
+.dados label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+    color: #fff;
+}
+
+.dados input,
+.dados select {
+    width: 100%;
+    padding: 10px;
+    margin: 0.4rem 0 1rem;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    transition: 0.3s;
+}
+
+.dados input:focus,
+.dados select:focus {
+    background-color: rgba(0, 247, 255, 0.2);
+    box-shadow: 0 0 8px #00f7ff;
+}
+
+/* Botões */
+button {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #00f7ff, #008fff);
+    border: none;
+    border-radius: 10px;
+    color: #000;
+    font-weight: bold;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px #00f7ff80;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #00c3ff, #0077ff);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00f7ff;
+}
+
+/* Resultado final */
+.res {
+    margin-top: 1.5rem;
+    color: #ddd;
+    font-size: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    max-width: 100%;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.res p {
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+/* Rodapé */
+footer {
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    color: #aaa;
+    font-size: 0.8rem;
+    z-index: 2;
+}
+@media (max-width: 480px) {
+    section {
+        width: 100%;
+        padding: 1rem;
+        border-radius: 0;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .dados input,
+    .dados select {
+        font-size: 0.9rem;
+    }
+
+    button {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .res {
+        font-size: 0.9rem;
+    }
+}
