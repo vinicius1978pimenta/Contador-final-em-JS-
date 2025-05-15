@@ -40,6 +40,8 @@ function finalizar() {
         let media = soma / tot;
         let ordemDecrescente = [...valores].sort((a, b) => b - a);
 
+        
+
         res.innerHTML += `<p>🔢 Ao todo, foram cadastrados <strong>${tot}</strong> números.</p>`;
         res.innerHTML += `<p>📈 O maior valor foi <strong>${maior}</strong>.</p>`;
         res.innerHTML += `<p>📉 O menor valor foi <strong>${menor}</strong>.</p>`;
